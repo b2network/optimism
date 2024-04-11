@@ -401,6 +401,7 @@ contract OptimismPortal2 is Initializable, ResourceMetering, ISemver {
     )
         public
         payable
+        whenNotPaused
         metered(_gasLimit)
     {
         // Just to be safe, make sure that people specify address(0) as the target when doing
