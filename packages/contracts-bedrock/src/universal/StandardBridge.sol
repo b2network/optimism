@@ -316,6 +316,9 @@ abstract contract StandardBridge is Initializable {
     )
         internal
     {
+        // Add a paused check when deposit ETH
+        require(paused() == false, "StandardBridge: paused");
+
         require(msg.value == _amount, "StandardBridge: bridging ETH must include sufficient ETH value");
 
         // Emit the correct events. By default this will be _amount, but child
@@ -349,6 +352,9 @@ abstract contract StandardBridge is Initializable {
     )
         internal
     {
+        // Add a paused check when deposit ETH
+        require(paused() == false, "StandardBridge: paused");
+
         if (_isOptimismMintableERC20(_localToken)) {
             require(
                 _isCorrectTokenPair(_localToken, _remoteToken),
