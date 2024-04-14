@@ -957,12 +957,17 @@ func NewL2StorageConfig(config *DeployConfig, block *types.Block) (state.Storage
 		"blobBaseFee":       eip4844.CalcBlobFee(*excessBlobGas),
 	}
 	storage["LegacyERC20ETH"] = state.StorageValues{
-		"_name":   "Ether",
-		"_symbol": "ETH",
+		//"_name":   "Ether",
+		//"_symbol": "ETH",
+		"_name":   "BTC",
+		"_symbol": "BTC",
 	}
 	storage["WETH9"] = state.StorageValues{
-		"name":     "Wrapped Ether",
-		"symbol":   "WETH",
+		//"name":     "Wrapped Ether",
+		//"symbol":   "WETH",
+		//"decimals": 18,
+		"name":     "Wrapped BTC",
+		"symbol":   "WBTC",
 		"decimals": 18,
 	}
 	if config.EnableGovernance {
