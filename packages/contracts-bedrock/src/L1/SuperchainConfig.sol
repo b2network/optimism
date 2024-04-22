@@ -48,10 +48,9 @@ contract SuperchainConfig is Initializable, ISemver {
     /// @param _paused      Initial paused status.
     function initialize(address _guardian, bool _paused) public initializer {
         _setGuardian(_guardian);
-        /*if (_paused) {
+        if (_paused) {
             _pause("Initializer paused");
-        }*/
-        _pause("Initializer paused");
+        }
     }
 
     /// @notice Getter for the guardian address.
