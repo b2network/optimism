@@ -27,12 +27,14 @@ contract WETH_Test is CommonTest {
     /// @dev Tests that the name function returns the correct value.
     function test_name_ether_succeeds() external view {
         assertFalse(l1Block.isCustomGasToken());
-        assertEq("Wrapped Ether", weth.name());
+        //assertEq("Wrapped Ether", weth.name());
+        assertEq("Wrapped BTC", weth.name());
     }
 
     /// @dev Tests that the symbol function returns the correct value.
     function test_symbol_ether_succeeds() external view {
         assertFalse(l1Block.isCustomGasToken());
-        assertEq("WETH", weth.symbol());
+        //assertEq("WETH", weth.symbol());
+        assertEq("WBTC", weth.symbol());
     }
 }

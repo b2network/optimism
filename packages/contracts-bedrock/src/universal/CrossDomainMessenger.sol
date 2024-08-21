@@ -174,6 +174,9 @@ abstract contract CrossDomainMessenger is
     /// @param _message     Message to trigger the target address with.
     /// @param _minGasLimit Minimum gas limit that the message can be executed with.
     function sendMessage(address _target, bytes calldata _message, uint32 _minGasLimit) external payable {
+        // Add a paused check
+        require(paused() == false, "CrossDomainMessenger: paused");
+
         if (isCustomGasToken()) {
             require(msg.value == 0, "CrossDomainMessenger: cannot send value with custom gas token");
         }

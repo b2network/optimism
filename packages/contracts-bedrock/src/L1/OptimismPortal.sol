@@ -496,6 +496,7 @@ contract OptimismPortal is Initializable, ResourceMetering, ISemver {
     )
         public
         payable
+        whenNotPaused
         metered(_gasLimit)
     {
         (address token,) = gasPayingToken();

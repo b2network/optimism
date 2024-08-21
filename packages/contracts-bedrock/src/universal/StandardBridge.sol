@@ -321,6 +321,9 @@ abstract contract StandardBridge is Initializable {
     )
         internal
     {
+        // Add a paused check when deposit ETH
+        require(paused() == false, "StandardBridge: paused");
+
         require(isCustomGasToken() == false, "StandardBridge: cannot bridge ETH with custom gas token");
         require(msg.value == _amount, "StandardBridge: bridging ETH must include sufficient ETH value");
 

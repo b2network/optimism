@@ -41,12 +41,14 @@ contract WETH98 is IWETH {
 
     /// @inheritdoc IWETH
     function name() external view virtual override returns (string memory) {
-        return "Wrapped Ether";
+        //return "Wrapped Ether";
+        return "Wrapped BTC";
     }
 
     /// @inheritdoc IWETH
     function symbol() external view virtual override returns (string memory) {
-        return "WETH";
+        //return "WETH";
+        return "WBTC";
     }
 
     /// @inheritdoc IWETH
